@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Aurora CodeSmith</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        .contact-details {
+            margin-top: 40px;
+        }
+
+        .success-message {
+            display: none;
+            font-size: 24px;
+            text-align: center;
+            color: #28a745;
+        }
+
+        /* Add some creativity */
+        .header-background {
+            background: linear-gradient(to bottom, #333, #555);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        /* Stylish Contact Details */
+        .contact-details strong {
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Add a Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-background">
+            <h1>Contact Aurora CodeSmith</h1>
+        </div>
+
+        <p>Feel free to get in touch with Aurora CodeSmith using the contact form or the provided contact details below:</p>
+
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="success-message" id="successMessage">Thank you for your message. We will get back to you soon!</div>
+
+        <div class="contact-details">
+            <h2>Contact Details:</h2>
+            <p><strong>Name:</strong> Aurora CodeSmith</p>
+            <p><strong>Email:</strong> auroracodesmith@gmail.com</p>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+        </div>
+    </div>
+    <footer>&copy; 2023 Aurora CodeSmith</footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (!name || !email || !message) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            document.getElementById("contactForm").style.display = "none";
+            document.getElementById("successMessage").style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
